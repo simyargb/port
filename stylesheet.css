@@ -1,0 +1,517 @@
+.press-start-2p-regular {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 100;
+  font-style: normal;
+}
+
+
+:root {
+  --text: #f5fff0;
+  --nav-bar: #405d27;
+  --nav-active: #82b74b;
+  --nav-active-label: #ffffff;
+}
+
+body {
+  background-color: #1f1f1f;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 200;
+  line-height: 1.5;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 0 0 0;
+  vertical-align: baseline;
+  display: grid;
+  background-image: url('bga.jpg');
+  background-size: cover;
+
+}
+
+
+main {
+  padding: 8px;
+}
+
+a {
+  color: #8eff77;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+a:hover {
+  color: #c9ffbe;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.gooey-nav {
+  margin-top: 42px;
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 4px;
+}
+
+.gooey-nav ul {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.gooey-nav li {
+  position: relative;
+  flex-shrink: 0;
+  background-color: var(--nav-bar);
+}
+
+.gooey-nav a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 25px;
+  color: rgb(110, 170, 58);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: inherit;
+}
+
+.gooey-nav li.active {
+  background-color: var(--nav-active);
+  transition: background-color 400ms;
+}
+
+.gooey-nav li.active a {
+  color: var(--nav-active-label);
+  transition: color 400ms;
+}
+
+.gooey-nav a:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+  z-index: 1;
+}
+
+.gooey-neck {
+  position: absolute;
+  top: 0;
+  right: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --nav-bar: #262626;
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .gooey-nav li.active,
+  .gooey-nav li.active a {
+    transition: none;
+  }
+}
+
+h1 {
+  color: #d3f5b7;
+}
+
+h3 {
+  color: #e0ffc7;
+}
+
+p {
+  font-size: 18px;
+  color: var(--text);
+}
+
+.workpreview {
+  width: 500px;
+  filter: grayscale(100%);
+  border-radius: 4px;
+  border: 0.2px solid #405d27;
+  transition: filter 0.3s, transform 0.3s;
+}
+
+.workpreview:hover {
+  filter: grayscale(0%);
+  transform: scale(1.01);
+  transition: transform 0.3s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .workpreview {
+    transition: none;
+  }
+
+  .workpreview:hover {
+    transform: none;
+  }
+}
+
+.line {
+  height: 1px;
+  background-color: #e0ffc7;
+  margin: 16px 0;
+}
+
+.work {
+  font-size: 16px;
+}
+
+
+
+/* SVG Styles */
+
+.svgs {
+  filter: grayscale(100%);
+  transition: filter 0.3s;
+}
+
+.svglnk{
+   display: inline-block;
+  margin-top: 32px;
+}
+
+.codepen-icon {
+  display: block;
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.svgs:hover {
+  filter: grayscale(0%);
+}
+
+.press-start-2p-regular {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.svgdiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*Chameleon*/
+.canvas {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 200px;
+
+}
+
+#svgCanvas {
+  border-radius: 8px;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 200px;
+  background-color: #fcfcf2;
+}
+
+#chameleon {
+  background-color: transparent;
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*Instant Camera*/
+
+#instantdiv {
+  position: relative;
+  border-radius: 8px;
+  place-items: center;
+  display: grid;
+  width: 100%;
+  max-width: 500px;
+  height: 200px;
+  align-items: center;
+  background-color: #C72418;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 400px;
+  perspective: 400px;
+}
+
+#ph {
+  font-family: "Press Start 2P", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 6px;
+  font-weight: 100;
+  margin-top: 18px;
+  color: #FCFCF2;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  animation: ph 0.5s steps(1, end) infinite;
+}
+
+@keyframes ph {
+
+  0%,
+  80% {
+    opacity: 1;
+  }
+
+  81%,
+  100% {
+    opacity: 0;
+  }
+}
+
+#camera {
+  opacity: 110%;
+  position: relative;
+  display: block;
+  width: 180px;
+  height: 180px;
+
+}
+
+#paper-window {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  margin-top: 0;
+  overflow: hidden;
+  clip-path: inset(153px 0 0);
+  pointer-events: none;
+}
+
+#paper {
+  position: absolute;
+  width: 180px;
+  height: 192px;
+  top: 25%;
+  left: 50%;
+  z-index: 1;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 700ms ease-out;
+}
+
+#paper.ejected {
+  transform: translate(-50%, calc(-50% + 70px));
+}
+
+#paper.remove {
+  animation: paper-fall 1s ease-in forwards;
+}
+
+@keyframes paper-fall {
+  0% {
+    transform-origin: 47px 216px;
+    transform: translate(-50%, calc(-50% + 70px)) rotate(0deg);
+  }
+
+  20% {
+    transform-origin: 47px 216px;
+
+    transform: translate(-50%, calc(-50% + 80px)) rotate(10deg);
+  }
+
+  100% {
+    transform-origin: top-right;
+    transform: translate(-50%, calc(-50% + 330px)) rotate(-24deg);
+  }
+}
+
+#shutter {
+  cursor: pointer;
+}
+
+#txt {
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: #222;
+  font-size: 8px;
+  line-height: 2;
+  font-weight: 500;
+  white-space: pre-line;
+  font-family: "Press Start 2P", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Blue Robot */
+
+.robot-stage {
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  width: 100%;
+  max-width: 500px;
+  height: 180px;
+  background-color: Aquamarine;
+  border-radius: 8px;
+}
+
+#bluerobot {
+  position: relative;
+  width: 200px;
+  height: 250px;
+  background-color: DeepSkyBlue;
+  border-radius: 94px 94px 32px 32px;
+  border-right: 8px solid dodgerblue;
+  border-top: 4px solid dodgerblue;
+  background-repeat: no-repeat;
+  place-content: center;
+  scale: 0.4;
+}
+
+#bluerobot::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 65px;
+  top: 15%;
+  left: 25%;
+  background:
+    radial-gradient(ellipse, dodgerblue 66%, transparent 67%) 80% 120% / 6em 1em,
+    radial-gradient(ellipse, #004c66 66%, transparent 67%) 55% 100% / 3em 3em,
+
+    radial-gradient(ellipse, AliceBlue 66%, transparent 67%) 90% 0% / 6em 6em,
+    radial-gradient(ellipse, dodgerblue 66%, transparent 67%) 80% 10% / 6em 6em;
+  background-repeat: no-repeat;
+}
+
+#bluerobot::before {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 90px;
+  top: 60%;
+  left: 15%;
+  z-index: 3;
+  background-size: 26px 100%;
+
+  background:
+    linear-gradient(deepskyblue 90%) 100% 100% / 100% 10%,
+
+    radial-gradient(ellipse, transparent 60%, dodgerblue 61%, deepskyblue 67%) 45% 25% / 7em 4em,
+    repeating-linear-gradient(180deg, DarkBlue, dodgerblue, PowderBlue, dodgerblue, PowderBlue) 23% 25% / 3% 68%,
+    linear-gradient(DarkBlue, dodgerblue, PowderBlue, dodgerblue, PowderBlue) 33% 25% / 3% 68%,
+    linear-gradient(DarkBlue, dodgerblue, PowderBlue, dodgerblue, PowderBlue) 43% 25% / 3% 68%,
+    linear-gradient(DarkBlue, dodgerblue, PowderBlue, dodgerblue, PowderBlue) 53% 25% / 3% 68%,
+    linear-gradient(DarkBlue, dodgerblue, PowderBlue, dodgerblue, PowderBlue) 63% 25% / 3% 68%,
+    linear-gradient(DarkBlue, dodgerblue, PowderBlue, dodgerblue, PowderBlue) 73% 25% / 3% 68%,
+    radial-gradient(ellipse, #00131a 60%, dodgerblue 61%, deepskyblue 67%) 45% 25% / 7em 4em;
+
+  background-repeat: no-repeat;
+}
+
+
+/* Birdy SVG container */
+
+
+#birdysvgbh {
+  background: antiquewhite;
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  width: 100%;
+  max-width: 500px;
+  height: 180px;
+  
+  border-radius: 8px;
+}
+
+#birdy{
+  display: flex;
+  align-items: center;
+  position: relative;
+  place-content: center; 
+  width:320px;
+  height:320px;
+  background-color: Gold;
+  scale: 0.42;
+  background:       
+    radial-gradient(ellipse, red 66%, transparent 67%) 
+    4% 26% / 1em 1em,
+      radial-gradient(ellipse, Gold 66%, transparent 67%) 
+    70% 30% / 7em 8em,
+    radial-gradient(ellipse, black 66%, transparent 67%) 
+    70% 33% / 7.3em 8em,
+    radial-gradient(circle, white 66%, transparent 67%) 
+    15% 17% / 1em 1em , 
+    radial-gradient(circle, black 66%, transparent 67%) 
+    15% 17% / 2.4em 2.4em,
+    radial-gradient(ellipse, Gold 66%, transparent 67%) 
+    1% 3% / 8.8em 8.1em,
+    radial-gradient(ellipse, black 66%, transparent 67%) 
+    0% 0% / 8.9em 8.3em,
+    radial-gradient(ellipse, Gold 66%, transparent 67%) 
+    50% 65% / 20em 20em,
+    radial-gradient(ellipse, black 66%, transparent 67%) 
+    50% 50% / 20.5em 20.5em,
+      radial-gradient(ellipse, AntiqueWhite 66%, transparent 67%) 
+    102% 66% / 3em 3em,
+      radial-gradient(ellipse, black 66%, transparent 67%) 
+    99% 70% / 3em 3em,
+      radial-gradient(ellipse, AntiqueWhite 66%, transparent 67%) 
+    32% 100% / 3em 3em,
+      radial-gradient(ellipse, black 66%, transparent 67%) 
+    34% 100% / 3em 3em;
+  background-repeat: no-repeat;
+}
+
+#birdy::after{
+  content: "";
+  position: absolute;
+  width: 45px;
+  height: 30px;
+  top: 25%;
+  left: -8%;
+  background:
+    conic-gradient(from 70deg at 0% 0%, 
+  transparent 0deg, 
+  red 20deg 40deg, 
+  transparent 40deg);
+  background-repeat: no-repeat;
+}
+
+#birdy::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  border-right: 5px solid black;
+  border-radius: 99px;
+  left:20%;
+  top: 90%;
+  background-color: transparent;
+  background-repeat: no-repeat;
+}
