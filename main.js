@@ -96,7 +96,7 @@ function animate(time) {
 }
 
 function select(instant = false) {
-  const index = links.findIndex((link) => link.hash === location.hash);
+  const index = links.findIndex((link) => link && link.hash === location.hash);
   // As in the original component, an unmatched route keeps the last selection.
   if (index !== -1) active = index;
   document.querySelectorAll("main > section").forEach((section) => {
@@ -108,8 +108,10 @@ function select(instant = false) {
   states.forEach((state, i) => {
     const isActive = i === active;
     state.segment.classList.toggle("active", isActive);
-    if (isActive) links[i].setAttribute("aria-current", "location");
-    else links[i].removeAttribute("aria-current");
+    if (links[i]) {
+      if (isActive) links[i].setAttribute("aria-current", "location");
+      else links[i].removeAttribute("aria-current");
+    }
     state.targets = [
       i === 0 ? 0 : open(i) ? span : -1,
       open(i) ? radius : 0,
@@ -207,4 +209,11 @@ paper.addEventListener("animationend", (event) => {
   paper.classList.remove("remove", "ejected");
   void paper.getBoundingClientRect(); // Apply the reset immediately
   paper.style.removeProperty("transition");
+});
+
+
+const modeToggle = document.querySelector(".theme-toggle");
+modeToggle.addEventListener("click", () => {
+  const isLight = document.body.classList.toggle("light-mode");
+  modeToggle.setAttribute("aria-label", isLight ? "Switch to dark mode" : "Switch to light mode");
 });
